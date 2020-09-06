@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+
+<body>
+ 	<form action="{{ url_for('predict')}}" method="post">
+    	<div class="container">  
+  	<center>  <h1> Insurance Prediction</h1> </center>  
+  	<hr>  
+	<label> Age</label>  
+	<input id="age" name="age" type="number" min="1">
+
+
+	<div>  
+	<label>   
+	Gender :  
+	</label><br>  
+	<input type="radio" value="Male" name="gender" id="gender" checked > Male   
+	<input type="radio" value="Female" name="gender" id="gender"> Female   
+	</div>  
+    
+
+	<label> Body Mass Index(BMI)	:</label>  
+	<input id="bmi" name="bmi" required="required" type="number" min="0">
+
+	<div>  
+	<label>   
+	Number of children :  
+	</label>   
+	<select id="children" name="children" required="required">
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+	</select>  
+	</div>
+  
+	<div>  
+	<label>   
+	Do you smoke? :  
+	</label><br>  
+	<input type="radio" value="Yes" name="smoker" id="smoker" checked >Yes 
+	<input type="radio" value="No" name="smoker" id="smoker"> No  
+	</div> 
+
+
+	<div>  
+	<label>   
+	Region you reside :  
+	</label>   
+	<select name="region" id="region" required="required">
+							<option value="1">Northwest</option>
+							<option value="2">Southeast</option>
+							<option value="3">Southwest</option>
+							<option value="4">Northeast</option>
+							
+	</select> 
+	</div>    
+	<button type="submit" class="registerbtn">Check insurance expense</button>    
+	</form>  
+	<br><h3> {{ prediction }}</h3> 
+
+
+	<style>
+		body{  
+  			font-family: Calibri, Helvetica, sans-serif;  
+  			background-color: pink;  
+	     	}  
+		.container {  
+			padding: 50px;  
+    			background-color: lightblue;  
+			}  
+  
+		input[type=text],input[type=number]  {  
+  			width: 10%;  
+  			padding: 5px;  
+  			margin: 5px 0 22px 0;  
+  			display: inline-block;  
+  			border: none;  
+  			background: #f1f1f1;  
+			}  
+		input[type=text]:focus, input[type=number]:focus {  
+  			background-color: orange;  
+  			outline: none;  
+			}  
+ 		div {  
+            		padding: 10px 0;  
+	     	   }  
+		hr {  
+  			border: 1px solid #f1f1f1;  
+  			margin-bottom: 25px;  
+		}  
+		.registerbtn {  
+  			background-color: #4CAF50;  
+  			color: white;  
+  			padding: 16px 20px;  
+  			margin: 8px 0;  
+  			border: none;  
+  			cursor: pointer;  
+  			width: 100%;  
+  			opacity: 0.9;  
+			}  
+		.registerbtn:hover {  
+  			opacity: 1;  
+				}  
+	</style>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>  
+</html>  
+
+
